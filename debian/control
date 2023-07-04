@@ -1,35 +1,38 @@
-Source: rust-cfg-if
+Source: rust-cfg-if-0.1
 Section: rust
 Priority: optional
-Maintainer: Cruise.zrz <Cruise.zrz@gmail.com>
-Build-Depends: debhelper (>= 12),
- dh-cargo (>= 24),
+Build-Depends: debhelper (>= 11),
+ dh-cargo (>= 18),
  cargo:native <!nocheck>,
  rustc:native <!nocheck>,
  libstd-rust-dev <!nocheck>
-Standards-Version: 4.6.0
-Homepage: https://github.com/deepin-community/rust-cfg-if
-#Vcs-Browser: https://salsa.debian.org/debian/cfg-if
-#Vcs-Git: https://salsa.debian.org/debian/cfg-if.git
-Rules-Requires-Root: no
+Maintainer: Debian Rust Maintainers <pkg-rust-maintainers@alioth-lists.debian.net>
+Uploaders:
+ Sylvestre Ledru <sylvestre@debian.org>
+Standards-Version: 4.4.1
+Vcs-Git: https://salsa.debian.org/rust-team/debcargo-conf.git [src/cfg-if-0.1]
+Vcs-Browser: https://salsa.debian.org/rust-team/debcargo-conf/tree/master/src/cfg-if-0.1
+Homepage: https://github.com/alexcrichton/cfg-if
 
 # FIXME (packages."(name)".section) debcargo auto-generated summaries are very long, consider overriding
 
-Package: librust-cfg-if-dev
+Package: librust-cfg-if-0.1-dev
 Architecture: any
 Multi-Arch: same
 Depends:
- ${misc:Depends}, ${shlibs:Depends}
+ ${misc:Depends}
 Suggests:
- librust-cfg-if+core-dev (= ${binary:Version})
+ librust-cfg-if-0.1+core-dev (= ${binary:Version})
 Provides:
+ librust-cfg-if-dev (= ${binary:Version}),
  librust-cfg-if+default-dev (= ${binary:Version}),
- librust-cfg-if-1-dev (= ${binary:Version}),
- librust-cfg-if-1+default-dev (= ${binary:Version}),
- librust-cfg-if-1.0-dev (= ${binary:Version}),
- librust-cfg-if-1.0+default-dev (= ${binary:Version}),
- librust-cfg-if-1.0.0-dev (= ${binary:Version}),
- librust-cfg-if-1.0.0+default-dev (= ${binary:Version})
+ librust-cfg-if-0-dev (= ${binary:Version}),
+ librust-cfg-if-0+default-dev (= ${binary:Version}),
+ librust-cfg-if-0.1+default-dev (= ${binary:Version}),
+ librust-cfg-if-0.1.10-dev (= ${binary:Version}),
+ librust-cfg-if-0.1.10+default-dev (= ${binary:Version})
+Replaces: librust-cfg-if-0.1.10-dev
+Breaks: librust-cfg-if-0.1.10-dev
 Description: Macro to ergonomically define an item depending on a large number of #[cfg] parameters - Rust source code
  Structured like an if-else chain, the first matching branch is the item that
  gets emitted.
@@ -37,21 +40,20 @@ Description: Macro to ergonomically define an item depending on a large number o
  This package contains the source for the Rust cfg-if crate, packaged by
  debcargo for use with cargo and dh-cargo.
 
-Package: librust-cfg-if+core-dev
+Package: librust-cfg-if-0.1+core-dev
 Architecture: any
 Multi-Arch: same
 Depends:
- ${misc:Depends}, ${shlibs:Depends}
- librust-cfg-if-dev (= ${binary:Version}),
+ ${misc:Depends},
+ librust-cfg-if-0.1-dev (= ${binary:Version}),
  librust-rustc-std-workspace-core-1+default-dev
 Provides:
- librust-cfg-if-1+core-dev (= ${binary:Version}),
- librust-cfg-if-1.0+core-dev (= ${binary:Version}),
- librust-cfg-if-1.0.0+core-dev (= ${binary:Version})
+ librust-cfg-if+core-dev (= ${binary:Version}),
+ librust-cfg-if-0+core-dev (= ${binary:Version}),
+ librust-cfg-if-0.1.10+core-dev (= ${binary:Version})
 Description: Macro to ergonomically define an item depending on a large number of #[cfg] parameters - feature "core"
  Structured like an if-else chain, the first matching branch is the item that
  gets emitted.
  .
  This metapackage enables feature "core" for the Rust cfg-if crate, by pulling
  in any additional dependencies needed by that feature.
-
