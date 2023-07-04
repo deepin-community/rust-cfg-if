@@ -1,6 +1,17 @@
-semver_suffix = true
 overlay = "."
-uploaders = ["Sylvestre Ledru <sylvestre@debian.org>"]
+uploaders = [
+  "Ximin Luo <infinity0@debian.org>",
+  "Wolfgang Silbermayr <wolfgang@silbermayr.at>",
+]
+
+# The auto-generated summary is too long.
+summary = "Rust macro for defining #[cfg] if-else statements"
+
+[packages.lib]
+test_is_broken = true
 
 [packages."lib+core"]
+test_is_broken = true
+
+[packages."core-dev"]
 test_is_broken = true

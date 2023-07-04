@@ -1,18 +1,15 @@
-rust-cfg-if-0.1 (0.1.10-2) unstable; urgency=medium
+rust-cfg-if (1.0.0-2) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * This is a packaged version suitable for deepin23
+
+ -- Cruise.zrz <Cruise.zrz@gmail.com>  Tue, 04 Jul 2023 14:43:51 +0800
+
+rust-cfg-if (1.0.0-1) unstable; urgency=medium
 
   * Team upload.
-  * Package cfg-if 0.1.10 from crates.io using debcargo 2.4.3
-  * Source only upload for testing migration
-  * Mark test for the "core" featureset as broken
-    (consistent with the prior rust-cfg-if 0.1.10-4.1 package)
+  * Package cfg-if 1.0.0 from crates.io using debcargo 2.4.3
+  * cfg-if 0.1 has been uploaded as a separate package
+    as too many packages expects 0.1
 
- -- Peter Michael Green <plugwash@debian.org>  Mon, 28 Dec 2020 00:30:26 +0000
-
-rust-cfg-if-0.1 (0.1.10-1) unstable; urgency=medium
-
-  * Package cfg-if 0.1.10 from crates.io using debcargo 2.4.3
-  * Uploading as a new package because 1.0 is now available
-    but many many crates depends on 0.1 and it will take a while
-    to upgrade to this version.
-
- -- Sylvestre Ledru <sylvestre@debian.org>  Sun, 22 Nov 2020 10:58:17 +0100
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 23 Nov 2020 22:36:00 +0100
