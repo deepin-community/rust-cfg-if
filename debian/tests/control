@@ -1,14 +1,19 @@
-Test-Command: /usr/share/cargo/bin/cargo-auto-test cfg-if 0.1.10 --all-targets --all-features
-Features: test-name=@
+Test-Command: /usr/share/cargo/bin/cargo-auto-test cfg-if 1.0.0 --all-targets --all-features
+Features: test-name=rust-cfg-if:@
 Depends: dh-cargo (>= 18), @
 Restrictions: allow-stderr, skip-not-installable, flaky
 
-Test-Command: /usr/share/cargo/bin/cargo-auto-test cfg-if 0.1.10 --all-targets --no-default-features
-Features: test-name=librust-cfg-if-0.1-dev
+Test-Command: /usr/share/cargo/bin/cargo-auto-test cfg-if 1.0.0 --all-targets 
+Features: test-name=librust-cfg-if-dev:default
 Depends: dh-cargo (>= 18), @
-Restrictions: allow-stderr, skip-not-installable
+Restrictions: allow-stderr, skip-not-installable, flaky
 
-Test-Command: /usr/share/cargo/bin/cargo-auto-test cfg-if 0.1.10 --all-targets --features core
-Features: test-name=librust-cfg-if-0.1+core-dev
+Test-Command: /usr/share/cargo/bin/cargo-auto-test cfg-if 1.0.0 --all-targets --no-default-features
+Features: test-name=librust-cfg-if-dev:
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable, flaky
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test cfg-if 1.0.0 --all-targets --no-default-features --features core
+Features: test-name=librust-cfg-if+core-dev:core
 Depends: dh-cargo (>= 18), @
 Restrictions: allow-stderr, skip-not-installable, flaky

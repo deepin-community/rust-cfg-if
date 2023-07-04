@@ -1,4 +1,4 @@
-# cfg-if
+# rust-cfg-if
 
 [Documentation](https://docs.rs/cfg-if)
 
